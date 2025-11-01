@@ -1,4 +1,4 @@
-# Crayon
+# Carryon
 [![Discord](https://img.shields.io/discord/987817685293355028?style=flat-square&logo=discord&label=Discord&color=%235865F2)](https://discord.gg/cracker-s-modded-community-987817685293355028)
 
 Rigid body simulation in Minecraft.
@@ -8,7 +8,7 @@ A fork of [Rayon](https://github.com/LazuriteMC/Rayon) to continue the project e
 ## Examples
 See the [examples folder](https://github.com/nonamecrackers2/Crayon/tree/1.19.4/src/main/java/dev/lazurite/rayon/impl/example) for an example
 
-## Developing with Crayon
+## Developing with Carryon
 Add the following lines to your `build.gradle`:
 
 ```gradle
