@@ -1,5 +1,4 @@
 # Carryon
-[![Discord](https://img.shields.io/discord/987817685293355028?style=flat-square&logo=discord&label=Discord&color=%235865F2)](https://discord.gg/cracker-s-modded-community-987817685293355028)
 
 Rigid body simulation in Minecraft.
 
