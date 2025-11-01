@@ -128,7 +128,7 @@ public class Utilities
 	
     public static List<ServerPlayer> getTracking(Entity entity) 
     {
-    	if (entity.getLevel() instanceof ServerLevel level)
+    	if (entity.level() instanceof ServerLevel level)
     	{
     		ChunkMap chunkMap = level.getChunkSource().chunkMap;
     		TrackedEntityMixin trackedEntity = ((ChunkMapMixin)chunkMap).rayon$getEntityMap().get(entity.getId());

@@ -129,7 +129,7 @@ public final class ServerEventHandler
 		Entity entity = event.getTarget();
 		if (EntityPhysicsElement.is(entity))
 		{
-			var space = MinecraftSpace.get(entity.level);
+			var space = MinecraftSpace.get(entity.level());
 			space.getWorkerThread().execute(() -> space.addCollisionObject(EntityPhysicsElement.get(entity).getRigidBody()));
 		}
 	}
@@ -140,7 +140,7 @@ public final class ServerEventHandler
 		Entity entity = event.getTarget();
 		if (EntityPhysicsElement.is(entity) && Utilities.getTracking(entity).isEmpty())
 		{
-			var space = MinecraftSpace.get(entity.level);
+			var space = MinecraftSpace.get(entity.level());
 			space.getWorkerThread().execute(() -> space.removeCollisionObject(EntityPhysicsElement.get(entity).getRigidBody()));
 		}
 	}

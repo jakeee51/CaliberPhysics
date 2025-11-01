@@ -65,7 +65,7 @@ public class PressureGenerator
 			{
 				if (rigidBody.getSleepTimer().get() > ElementRigidBody.SLEEP_TIME_IN_SECONDS)
 				{
-					System.out.println("yes");
+//					System.out.println("yes");
 					rigidBody.setDeactivationTime(2.0f);
 					continue;
 				}

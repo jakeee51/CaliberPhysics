@@ -20,17 +20,14 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 
 @Mod(Rayon.MODID)
-public class Rayon
-{
+public class Rayon {
 	public static final String MODID = "crayon";
 	public static final Logger LOGGER = LogManager.getLogger("Crayon");
-//	private static boolean serverHasRayon = false;
-//
-	public Rayon()
-	{
+
+	public Rayon(FMLJavaModLoadingContext context) {
 		NativeLoader.load();
 		
-		IEventBus modBus = FMLJavaModLoadingContext.get().getModEventBus();
+        IEventBus modBus = context.getModEventBus();
 		modBus.addListener(this::clientInit);
 		modBus.addListener(this::commonInit);
 		modBus.addListener(RayonExampleEntityRenderers::registerEntityRenderers);
@@ -68,14 +65,8 @@ public class Rayon
 		forgeBus.register(PressureGenerator.class);
 		forgeBus.register(TerrainGenerator.class);
 	}
-
-//	public static boolean serverHasRayon()
-//	{
-//		return serverHasRayon;
-//	}
 	
-	public static ResourceLocation id(String path)
-	{
-		return new ResourceLocation(MODID, path);
+	public static ResourceLocation id(String path) {
+		return ResourceLocation.fromNamespaceAndPath(MODID, path);
 	}
 }

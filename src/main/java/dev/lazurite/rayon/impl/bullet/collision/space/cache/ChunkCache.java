@@ -36,8 +36,9 @@ public interface ChunkCache
 
 		final var block = blockState.getBlock();
 		final var properties = BlockProperty.getBlockProperty(block);
+        boolean isNotPossible = !block.isPossibleToRespawnInThis(blockState);
 
-		return properties != null ? properties.collidable() : !blockState.isAir() && !block.isPossibleToRespawnInThis() && (blockState.getFluidState().isEmpty() || (blockState.hasProperty(BlockStateProperties.WATERLOGGED) && blockState.getValue(BlockStateProperties.WATERLOGGED)));
+		return properties != null ? properties.collidable() : !blockState.isAir() && isNotPossible && (blockState.getFluidState().isEmpty() || (blockState.hasProperty(BlockStateProperties.WATERLOGGED) && blockState.getValue(BlockStateProperties.WATERLOGGED)));
 	}
 
 	void refreshAll();

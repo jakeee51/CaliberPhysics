@@ -16,7 +16,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.level.Level;
-import net.minecraftforge.client.event.RenderLevelLastEvent;
+import net.minecraftforge.client.event.RenderLevelStageEvent;
 import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.event.entity.EntityJoinLevelEvent;
 import net.minecraftforge.event.entity.EntityLeaveLevelEvent;
@@ -68,7 +68,7 @@ public final class ClientEventHandler
 	}
 
 	@SubscribeEvent
-	public static void onDebugRender(RenderLevelLastEvent event)
+	public static void onDebugRender(RenderLevelStageEvent event)
 	{
 		if (CollisionObjectDebugger.isEnabled())
 		{
@@ -85,7 +85,7 @@ public final class ClientEventHandler
 			Entity entity = event.getEntity();
 			if (EntityPhysicsElement.is(entity))
 			{
-				Level level = entity.level;
+				Level level = entity.level();
 				MinecraftSpace.getOptional(level).ifPresent(space -> {
 					space.getWorkerThread().execute(() -> space.addCollisionObject(EntityPhysicsElement.get(entity).getRigidBody()));
 				});
@@ -101,7 +101,7 @@ public final class ClientEventHandler
 			Entity entity = event.getEntity();
 			if (EntityPhysicsElement.is(entity))
 			{
-				Level level = entity.level;
+				Level level = entity.level();
 				MinecraftSpace.getOptional(level).ifPresent(space -> {
 					space.getWorkerThread().execute(() -> space.removeCollisionObject(EntityPhysicsElement.get(entity).getRigidBody()));
 				});

@@ -28,7 +28,7 @@ public class EntityRigidBody extends ElementRigidBody
 	 */
 	public EntityRigidBody(EntityPhysicsElement element)
 	{
-		this(element, MinecraftSpace.get(element.cast().level), element.createShape());
+		this(element, MinecraftSpace.get(element.cast().level()), element.createShape());
 	}
 
 	@Override

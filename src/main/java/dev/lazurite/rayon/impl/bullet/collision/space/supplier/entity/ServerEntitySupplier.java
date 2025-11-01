@@ -10,7 +10,7 @@ public class ServerEntitySupplier implements EntitySupplier
 	public GameType getGameType(Player player)
 	{
 		if (player instanceof ServerPlayer serverPlayer)
-			return serverPlayer.getLevel().getServer().createGameModeForPlayer(serverPlayer).getGameModeForPlayer();
+			return serverPlayer.level().getServer().createGameModeForPlayer(serverPlayer).getGameModeForPlayer();
 		return GameType.SURVIVAL;
 	}
 }
