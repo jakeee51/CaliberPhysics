@@ -1,6 +1,6 @@
 # Carryon
 
-Rigid body simulation in Minecraft.
+Rigid body physics simulation in Minecraft.
 
 A fork of [Rayon](https://github.com/LazuriteMC/Rayon) to continue the project exclusively for Forge.
 
