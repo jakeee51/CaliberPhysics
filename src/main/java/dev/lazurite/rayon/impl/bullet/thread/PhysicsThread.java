@@ -1,6 +1,5 @@
 package dev.lazurite.rayon.impl.bullet.thread;
 
-import java.util.Optional;
 import java.util.Queue;
 import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.concurrent.Executor;
@@ -8,7 +7,7 @@ import java.util.concurrent.Executor;
 import org.jetbrains.annotations.NotNull;
 
 import dev.lazurite.rayon.api.PhysicsElement;
-import dev.lazurite.rayon.impl.Rayon;
+import dev.lazurite.rayon.impl.CarryOn;
 import dev.lazurite.rayon.impl.bullet.collision.space.MinecraftSpace;
 import dev.lazurite.rayon.impl.bullet.collision.space.supplier.entity.EntitySupplier;
 import dev.lazurite.rayon.impl.bullet.collision.space.supplier.level.LevelSupplier;
@@ -54,7 +53,7 @@ public class PhysicsThread extends Thread implements Executor
 			this.throwable = throwable;
 		});
 
-		Rayon.LOGGER.info("Starting " + getName());
+		CarryOn.LOGGER.info("Starting " + getName());
 		this.start();
 	}
 
@@ -136,7 +135,7 @@ public class PhysicsThread extends Thread implements Executor
 	public void destroy()
 	{
 		this.running = false;
-		Rayon.LOGGER.info("Stopping " + this.getName());
+		CarryOn.LOGGER.info("Stopping " + this.getName());
 
 		try
 		{
@@ -144,7 +143,7 @@ public class PhysicsThread extends Thread implements Executor
 		}
 		catch (InterruptedException e)
 		{
-			Rayon.LOGGER.error("Error joining " + this.getName());
+			CarryOn.LOGGER.error("Error joining " + this.getName());
 			e.printStackTrace();
 		}
 	}

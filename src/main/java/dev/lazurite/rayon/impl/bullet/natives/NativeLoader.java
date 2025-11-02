@@ -10,7 +10,7 @@ import org.apache.commons.io.FileUtils;
 import com.jme3.system.JmeSystem;
 import com.jme3.system.NativeLibraryLoader;
 
-import dev.lazurite.rayon.impl.Rayon;
+import dev.lazurite.rayon.impl.CarryOn;
 import net.minecraftforge.fml.loading.FMLLoader;
 
 /**
@@ -36,18 +36,18 @@ public class NativeLoader
 			if (Files.exists(destination))
 			{
 				if (!destinationFile.delete())
-					Rayon.LOGGER.warn("Failed to remove old bullet natives.");
+					CarryOn.LOGGER.warn("Failed to remove old bullet natives.");
 			}
 
 			try {
 				FileUtils.copyURLToFile(url, destinationFile);
 			} catch (IOException e) {
-				Rayon.LOGGER.warn("Unable to copy natives.");
+				CarryOn.LOGGER.warn("Unable to copy natives.");
 			}
 
 			NativeLibraryLoader.loadLibbulletjme(true, nativesFolder.toFile(), "Release", "Sp");
 			
-			Rayon.LOGGER.debug("Loaded LibBulletJME natives.");
+			CarryOn.LOGGER.debug("Loaded LibBulletJME natives.");
 		}
 		catch (IOException | NoSuchElementException e)
 		{
