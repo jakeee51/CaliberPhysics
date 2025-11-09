@@ -6,6 +6,8 @@ to portions of [Bullet Physics][bullet]
 and [Khaled Mamou's V-HACD Library][vhacd],
 enabling 3-D physics simulation for Java applications.
 
+This is the same Bullet Physics Engine that can be found in many video games like GTA V and also in Blender.
+
 A fork of [Rayon](https://github.com/LazuriteMC/Rayon) to continue the project exclusively for Forge.
 The old project was archived, so we carry on!
 
