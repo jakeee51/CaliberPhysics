@@ -1,4 +1,4 @@
-# Carryon
+# Caliber Physics
 
 Rigid body physics simulation in Minecraft utilizing the [LibBulletjme](https://github.com/stephengold/Libbulletjme)
  library. adds JNI "glue code"
